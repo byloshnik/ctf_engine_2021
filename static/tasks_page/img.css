@@ -1,0 +1,26 @@
+.footer-logo {
+	max-width: 50%;
+}
+
+.toup {
+	padding-top: 4%;
+}
+
+.rostelecom {
+	margin-top: -7%;
+}
+
+.footer_pos{
+	position : absolute;
+	bottom   : 0;
+}
+
+.imgbl {
+	margin: 25px 30px 0px 0px;
+	max-width: 85%
+}
+
+footer{
+   /* 0 flex-grow, 0 flex-shrink, auto flex-basis */
+   flex: 0 0 auto;
+}

@@ -1,0 +1,71 @@
+{% extends "wrapper.html" %}
+{% block content %}
+
+{% for task in data.tasks_data %}
+	<!-- Modal -->
+	<div class="modal fade" id="{{ task.name }}_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title" id="exampleModalLabel">{{ task.name }}</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span class="close_btn" aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	      <div class="modal-body">
+	      	<p id="task_descp">
+		      	{% for line in task.descp %}
+			        {{ line }} <br>
+		        {% endfor %}
+	        </p>
+	      </div>
+	      <div class="modal-footer">
+	        <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+	        {% if task.to_send != 'none' %}
+			<a href="cloud/{{ task.name }}.zip">
+		        <button type="button" class="btn btn-primary mybtn">Скачать</button>
+			</a>
+			{% endif %}
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	<!-- End Modal -->
+{% endfor %}
+
+<div class="status-one">
+	<div class="row">
+		{% for task in data.tasks_data %}
+
+		{% if task.name != "Word-Joy" %}
+			<div class="col-md-3 col-sm-6 col-xs-6 col-mob " >
+				<!-- Item Starts -->
+				<div class="item">
+					
+					<div class="task_name_head">
+						{{ task.name }}
+					</div>
+
+					{% for category in task.category %}
+						<code style="color: #7289DA">{{ category }}</code>
+					{% endfor %}
+
+					<h5>{{ task.points }} баллов</h5>
+					<h6 class="sols">{{ task.solutions }} решений</h6>
+
+					<button id="taskbtn" type="button" class="btn btn-primary mybtn" data-toggle="modal" data-target="#{{ task.name }}_modal">
+						Открыть
+					</button>
+					
+				</div>
+				<!-- Item Ends -->
+			</div>
+		{% endif %}
+		
+		{% endfor %}
+	</div>
+</div>
+
+
+
+{% endblock %}

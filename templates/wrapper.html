@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		
+		<title>ToUp x Kvant CTF</title>
+		<!-- Description, Keywords and Author -->
+		<meta name="description" content="Your description">
+		<meta name="keywords" content="Your,Keywords">
+		<meta name="author" content="ResponsiveWebInc">
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<!-- Styles -->
+		<!-- Bootstrap CSS -->
+		<link href="{{ url_for('static', filename='tasks_page/bootstrap.min.css') }}" rel="stylesheet">
+		<!-- Font awesome CSS -->
+		<link href="{{ url_for('static', filename='tasks_page/font-awesome.min.css') }}" rel="stylesheet">
+		
+		
+		<!-- Main CSS -->
+		<link href="{{ url_for('static', filename='tasks_page/style-302.css') }}" rel="stylesheet">
+		<link href="{{ url_for('static', filename='tasks_page/user.css') }}" rel="stylesheet">
+		<link href="{{ url_for('static', filename='tasks_page/modal.css') }}" rel="stylesheet">
+		<link href="{{ url_for('static', filename='tasks_page/img.css') }}" rel="stylesheet">
+		<link href="{{ url_for('static', filename='tasks_page/clock.css') }}" rel="stylesheet">
+				
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="https://selection-studio.com/downloads/Razrabotka/mega-elements-bootstrap/ui/ui-302.html#">
+
+
+
+</head>
+	
+	<body>
+
+		<div class="ui-302">
+		
+			<div class="container-fluid">
+				<h1>ToUp x Kvant CTF</h1>
+				
+				{% for btn_obj in data.btns %}
+
+					<a href="{{ btn_obj.link }}">
+						<button type="button" class="btn btn-primary mybtn" data-toggle="modal">
+							{{ btn_obj.text }}
+						</button>
+					</a>
+
+				{% endfor %}
+
+				<hr>
+				<!-- Status One Starts -->
+				{% block content %}{% endblock %}
+				
+				<br>
+			</div>
+		
+			<footer>
+				<center>
+
+					<h6>Организаторы и партнёры конкурса</h6>
+				
+					<div class="status-one">
+						<div class="navbar-inner">
+							<div class="container ">
+								<div class="row center-block">
+									
+									<div class="imgbl">
+										<a href="{{ data.footer_links.toup }}" target="_blank">
+											<div class="col-md-3 col-sm-6 col-xs-6 col-mob toup" >
+												<img class="footer-logo" src="{{ url_for('static', filename='img/ToUpWhite.svg') }}" alt="">	
+											</div>
+										</a>
+									</div>
+
+									<div class="imgbl">
+										<a href="{{ data.footer_links.kvant }}" target="_blank">
+											<div class="col-md-3 col-sm-6 col-xs-6 col-mob" >
+												<img class="footer-logo" src="{{ url_for('static', filename='img/kvant.png') }}" alt="">
+											</div>
+										</a>
+									</div>
+
+									<div class="imgbl">
+										<a href="{{ data.footer_links.rrtu }}" target="_blank">
+											<div class="col-md-3 col-sm-6 col-xs-6 col-mob" >
+												<img class="footer-logo" src="{{ url_for('static', filename='img/rrtu.png') }}" alt="">	
+											</div>	
+										</a>
+									</div>
+									
+									<div class="imgbl">
+										<a href="{{ data.footer_links.rostelecom }}" target="_blank">
+											<div class="col-md-3 col-sm-6 col-xs-6 col-mob" >
+												<img class="footer-logo rostelecom" src="{{ url_for('static', filename='img/rostelecom.png') }}" alt="">	
+											</div>
+										</a>
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<p>© 2020 Copyright <a href="https://vk.com/toup_ctf" target="_blank">ToUp studio</a></p>
+
+				</center>
+			</footer>
+
+		</div>
+
+		<!-- Javascript files -->
+		<!-- jQuery -->
+		<script src="{{ url_for('static', filename='tasks_page/jquery.js') }}"></script>
+		<!-- Bootstrap JS -->
+		<script src="{{ url_for('static', filename='tasks_page/bootstrap.min.js') }}"></script>
+		<!-- Placeholder JS -->
+		<script src="{{ url_for('static', filename='tasks_page/placeholder.js') }}"></script>
+		<!-- Respond JS for IE8 -->
+		<script src="{{ url_for('static', filename='tasks_page/respond.min.js') }}"></script>
+		<!-- HTML5 Support for IE -->
+		<script src="{{ url_for('static', filename='tasks_page/html5shiv.js') }}"></script>
+		
+		
+		<!-- Javascript for this page -->
+		<!-- Excanvas JS -->
+		<script src="{{ url_for('static', filename='tasks_page/excanvas.min.js.html') }}"></script>
+		<!-- Knob JS -->
+		<script src="{{ url_for('static', filename='tasks_page/jquery.knob.min.js') }}"></script>
+		<!-- Sparkline -->
+		<script src="{{ url_for('static', filename='tasks_page/sparklines.js') }}"></script>
+
+		<script src="{{ url_for('static', filename='tasks_page/clock.js') }}"></script>
+		
+		<!-- Javascript code for this page -->
+		
+		
+</body></html>

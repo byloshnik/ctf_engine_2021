@@ -1,0 +1,42 @@
+{% extends "wrapper.html" %}
+{% block content %}
+
+<h1>Табло участников</h1>
+
+<h6>Активных команд за последние 2ч.: {{ data.active_count }} </h6>
+
+<table class="table table-striped table-dark">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Команда</th>
+      <th scope="col">Баллов</th>
+      <th scope="col">Решено</th>
+      <th scope="col">Город</th>
+    </tr>
+  </thead>
+  <tbody>
+  	{% for team in data.users_data %}
+    <tr>
+      <th scope="row">{{ team.place }}</th>
+
+      <td>
+            {{ team.team_name }}
+      </td>
+
+      <td>{{ team.points }}</td>
+
+      <td>{{ team.tasks_solved_count }}</td>
+
+      <td class="city_td">
+        <a class="main_links" href="/scoreboard?city={{ team.city }}">
+          {{ team.city }}
+        </a>
+      </td>
+    </tr>
+    {% endfor %}
+
+  </tbody>
+</table>
+
+{% endblock %}
